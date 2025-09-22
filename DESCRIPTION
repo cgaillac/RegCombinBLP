@@ -1,0 +1,20 @@
+Package: RegCombinBLP
+Type: Package
+Title: Partially Linear Regression under Data Combination
+Version: 0.1.0
+Authors@R: c(person("Xavier", "D'Haultfoeuille", email = "xavier.dhaultfoeuille@ensae.fr", role = c("aut")),
+    person("Christophe", "Gaillac", email = "christophe.gaillac@unige.ch", role = c("aut", "cre")), 
+    person("Arnaud", "Maurel", email = "arnaud.maurel@duke.edu", role = c("aut")))
+Description: We implement best linear predictions in a context where the outcome of interest and some of the covariates are observed in two different datasets that cannot be matched based on D'Haultfoeuille, Gaillac, Maurel (2024) <doi:10.48550/arXiv.2412.04816>. The package allows for common regressors observed in both datasets, including auxiliary variables, which researchers do not seek to include in the regression but that appear in both datasets. It also provides asymptotically normal estimators of the bounds.
+License: GPL-3
+Encoding: UTF-8
+Suggests: knitr, rmarkdown
+RoxygenNote: 7.3.3
+Imports:
+        dplyr,kableExtra,snowfall,RationalExp,RegCombin,Hmisc,geometry,pracma
+NeedsCompilation: no
+Packaged: 2025-09-22 13:27:53 UTC; gaillac
+Author: Xavier D'Haultfoeuille [aut],
+  Christophe Gaillac [aut, cre],
+  Arnaud Maurel [aut]
+Maintainer: Christophe Gaillac <christophe.gaillac@unige.ch>
