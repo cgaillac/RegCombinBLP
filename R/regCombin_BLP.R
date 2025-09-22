@@ -37,24 +37,28 @@
 #'
 #' @details
 #' The function proceeds in several steps:
-#' 1. Prepares matrices of conditioning (`Xc_x`, `Xc_y`) and non-conditioning covariates (`Xnc`) and weights (`Wc_x`, `Wc_y`).
+#' 1. Prepares matrices of covariates (`Xc_x`, `Xc_y`), outside regressors (`Xnc`), auxiliary variables (`Wc_x`, `Wc_y`).
 #' 2. Calls `compute_BLP()` to compute hull points (BLP bounds) based on the input datasets.
 #' 3. If `bootstrap` is TRUE, repeats computations via resampling to obtain variance estimates.
 #' 4. If `ASN` is TRUE, computes asymptotic variance using influence functions, optionally conditioning on `W`.
-#' 5. Handles discrete/factor covariates via clustering and projection to compute bounds.
 #'
 #' @examples
 #' \dontrun{
 #' # Example usage
-#' results <- regCombin_BLP(
-#'   Ldata = data.frame(Y = rnorm(100), C1 = rnorm(100)),
-#'   Rdata = data.frame(NC1 = rnorm(100), C1 = rnorm(100)),
-#'   out_var = "Y",
-#'   nc_var = c("NC1"),
-#'   c_var = c("C1"),
-#'   nbCores = 2,
-#'   bootstrap = TRUE
-#' )
+#' Ldata = data.frame(Y = rnorm(100), C1 = rnorm(100))
+#'Rdata = data.frame(NC1 = rnorm(100), C1 = rnorm(100))
+#'
+#'results <- regCombin_BLP(Ldata,Rdata,
+#'                         out_var = "Y",
+#'                         nc_var = c("NC1"),
+#'                         c_var = c("C1"),
+#'                         w_var=NULL,
+#'                         w_x = NULL ,w_y= NULL,nbCores=1,
+#'                         DP=FALSE,full=FALSE,FW=FALSE,discrete=TRUE,
+#'                         pt_est=FALSE,bootstrap=FALSE,dK=2.5,
+#'                         ASN=TRUE,unchanged =FALSE,factor=FALSE,K_sel= 0,
+#'                         dataset=0, O_only =FALSE)
+#'
 #' }
 #'
 #' @export

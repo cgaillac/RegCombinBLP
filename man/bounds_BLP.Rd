@@ -84,7 +84,7 @@ The function performs the following operations:
    a. Applies Frisch-Waugh adjustment if `FW = TRUE`.
    b. Discretizes or clusters `W` if `discrete = TRUE`.
    c. Handles special cases for `exact = 1` or `exact = 2`.
-   d. Computes weighted residuals, projections, and Empirical Mass Distance (EMD) bounds.
+   d. Computes weighted residuals, projections, and Earth Mover's Distance (EMD)  bounds.
 5. Returns the computed lower and upper bounds for each covariate.
 }
 \examples{

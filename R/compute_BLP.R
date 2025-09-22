@@ -29,8 +29,8 @@
 #' @param dataset Integer: dataset type flag (default 0).
 #' @param O_only Logical, whether to compute bounds only for outside regressors (default FALSE).
 #'
-#' @return A list or object containing BLP bounds. If `DP = TRUE`, returns Pacini-style bounds;
-#' otherwise returns standard BLP bounds, including hull points and influence function data (if applicable).
+#' @return A list or object containing BLP bounds. Returns DGM BLP bounds,#
+#'  including hull points and influence function data (if applicable).
 #'
 #' @details
 #' The function proceeds in the following steps:

@@ -84,8 +84,8 @@ compute_BLP(
 \item{O_only}{Logical, whether to compute bounds only for outside regressors (default FALSE).}
 }
 \value{
-A list or object containing BLP bounds. If `DP = TRUE`, returns Pacini-style bounds;
-otherwise returns standard BLP bounds, including hull points and influence function data (if applicable).
+A list or object containing BLP bounds. Returns DGM BLP bounds,#
+ including hull points and influence function data (if applicable).
 }
 \description{
 Computes bounds on the BLP coefficients, optionally
