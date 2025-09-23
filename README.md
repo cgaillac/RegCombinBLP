@@ -55,7 +55,6 @@ Every example below:
 > - `nc_var`: vector of names of **outside** regressors, not commonly observed with the outcome, here `"Xnc"`
 > - `c_var`: vector of **commonly observed** regressors , here `"Xc"` (optional)
 > - `w_var`: vector of observed **auxiliary** regressors, commonly observed with the outcome but not entering the regression, here `"Wc"` (optional)
-> - We set `DP = FALSE`, `full = FALSE`, `FW = FALSE`, `discrete = TRUE`, `bootstrap = FALSE` for a fast illustrative run. 
 
 ---
 
@@ -143,7 +142,7 @@ simulate_dgp <- function(
 
 run_blp <- function(Ldata, Rdata, out_var, nc_var, c_var = NULL, w_var = NULL,
                     nbCores = 1, FW = FALSE, discrete = TRUE, pt_est = FALSE,
-                    bootstrap = FALSE, dK = 2.5, ASN = TRUE, K = 0,
+                    ASN = TRUE, K = 0,
                     dataset = 0, O_only = TRUE) {
 
   regCombin_BLP(
@@ -151,8 +150,8 @@ run_blp <- function(Ldata, Rdata, out_var, nc_var, c_var = NULL, w_var = NULL,
     out_var = out_var, nc_var = nc_var,
     c_var = c_var, w_var = w_var,
     w_x = NULL, w_y = NULL, nbCores = nbCores,
-    DP = FALSE, full = FALSE, FW = FW, discrete = discrete,
-    pt_est = pt_est, bootstrap = bootstrap, dK = dK,
+    full = FALSE, FW = FW, discrete = discrete,
+    pt_est = pt_est,
     ASN = ASN, unchanged = FALSE, factor = FALSE, K_sel = K,
     dataset = dataset, O_only = O_only
   )
@@ -222,7 +221,6 @@ out3$ci
 
 - **Speed / parallelism.** Increase `nbCores` if your machine has multiple cores and your OS/BLAS supports parallelism.
 - **Point estimation.** If you require only the point estimates, consider `pt_est = TRUE`.
-- **Bootstrap inference.** Set `bootstrap = TRUE`; this will take longer than using asymptotic normality results.
 
 ---
 
