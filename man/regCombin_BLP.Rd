@@ -14,13 +14,10 @@ regCombin_BLP(
   w_x = NULL,
   w_y = NULL,
   nbCores = 1,
-  DP = FALSE,
   full = FALSE,
   FW = FALSE,
   discrete = FALSE,
   pt_est = FALSE,
-  bootstrap = FALSE,
-  dK = 2.5,
   ASN = TRUE,
   unchanged = FALSE,
   factor = FALSE,
@@ -48,8 +45,6 @@ regCombin_BLP(
 
 \item{nbCores}{Number of CPU cores to use for parallel computations (default 1).}
 
-\item{DP}{DEPRECATED, Logical, whether to also compute Pacini (2019) bounds}
-
 \item{full}{Logical, full computation option (default FALSE).}
 
 \item{FW}{Logical, whether to compute Frisch-Waugh type bounds (default FALSE).}
@@ -57,10 +52,6 @@ regCombin_BLP(
 \item{discrete}{Logical, whether to treat conditioning variables as discrete (default FALSE).}
 
 \item{pt_est}{Logical, whether to return point estimates only (default FALSE).}
-
-\item{bootstrap}{Logical, whether to use bootstrap for variance estimation (default FALSE).}
-
-\item{dK}{DEPRECATED, Numeric, parameter controlling smoothing or discretization (default 2.5).}
 
 \item{ASN}{Logical, whether to compute asymptotic variance using influence function (default TRUE).}
 
@@ -85,15 +76,14 @@ A list containing:
 }
 \description{
 Computes bounds for regression coefficients provided in D'Haultfoeuille, Gaillac, Maurel (2024) <doi:10.48550/arXiv.2412.04816>.
-It optionally allows incorporating conditioning variables, weights, using bootstrap or subsampling instead of asymptotic normality,
+It optionally allows incorporating conditioning variables, weights, using asymptotic normality results,
 and information about the support of the regressors.
 }
 \details{
 The function proceeds in several steps:
 1. Prepares matrices of covariates (`Xc_x`, `Xc_y`), outside regressors (`Xnc`), auxiliary variables (`Wc_x`, `Wc_y`).
 2. Calls `compute_BLP()` to compute hull points (BLP bounds) based on the input datasets.
-3. If `bootstrap` is TRUE, repeats computations via resampling to obtain variance estimates.
-4. If `ASN` is TRUE, computes asymptotic variance using influence functions, optionally conditioning on `W`.
+3. If `ASN` is TRUE, computes asymptotic variance using influence functions, optionally conditioning on `W`.
 }
 \examples{
 \dontrun{
@@ -107,8 +97,8 @@ results <- regCombin_BLP(Ldata,Rdata,
                         c_var = c("C1"),
                         w_var=NULL,
                         w_x = NULL ,w_y= NULL,nbCores=1,
-                        DP=FALSE,full=FALSE,FW=FALSE,discrete=TRUE,
-                        pt_est=FALSE,bootstrap=FALSE,dK=2.5,
+                        full=FALSE,FW=FALSE,discrete=TRUE,
+                        pt_est=FALSE,
                         ASN=TRUE,unchanged =FALSE,factor=FALSE,K_sel= 0,
                         dataset=0, O_only =FALSE)
 

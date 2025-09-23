@@ -66,6 +66,9 @@ These functions generate the DGP for the simulations, and store data in two sepa
 ```r
 library(dplyr)
 library(MASS)
+library(sfsmisc)
+library(pracma)
+library(RegCombin)
 library(RegCombinBLP)
 
 simulate_dgp <- function(

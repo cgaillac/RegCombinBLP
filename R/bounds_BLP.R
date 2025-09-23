@@ -14,7 +14,6 @@
 #' @param full Logical: whether to compute full BLP bounds (default FALSE).
 #' @param FW Logical: whether to apply Frisch-Waugh-type adjustment (default FALSE).
 #' @param discrete Logical: whether to treat conditioning variables as discrete (default FALSE).
-#' @param dK DEPRECATED, Numeric: discretization or smoothing parameter (default 2.5).
 #' @param unchanged Logical: whether to retain all values when discretizing (default FALSE).
 #' @param factor Logical: whether to treat W covariates as factors (default FALSE).
 #' @param K_sel Integer: number of clusters for discretization (default 0, auto-selected).
@@ -61,7 +60,6 @@ bounds_BLP <-
            full = FALSE,
            FW = FALSE,
            discrete = FALSE,
-           dK = 2.5,
            unchanged = FALSE,
            factor = FALSE,
            K_sel = 0,

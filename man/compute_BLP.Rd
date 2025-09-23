@@ -18,12 +18,9 @@ compute_BLP(
   dimW,
   dimXnc,
   values = NULL,
-  DP = FALSE,
   full = FALSE,
   FW = FALSE,
   discrete = FALSE,
-  bootstrap = FALSE,
-  dK = 2.5,
   unchanged = TRUE,
   rule = 1,
   factor = FALSE,
@@ -59,17 +56,11 @@ compute_BLP(
 
 \item{values}{Optional values used in bounds computation (default NULL).}
 
-\item{DP}{DEPRECATED, Logical: whether to use Pacini-style bounds (`TRUE`) or standard BLP (`FALSE`).}
-
 \item{full}{Logical: whether to use full computation in BLP bounds (default FALSE).}
 
 \item{FW}{Logical: whether to apply Frisch-Waugh adjustments (default FALSE).}
 
 \item{discrete}{Logical: whether to treat conditioning variables as discrete (default FALSE).}
-
-\item{bootstrap}{Logical: whether to perform bootstrap sampling (default FALSE).}
-
-\item{dK}{DEPRECATED, Numeric: smoothing/discretization parameter (default 2.5).}
 
 \item{unchanged}{Logical: whether to keep all values when discretizing (default TRUE).}
 
@@ -114,8 +105,7 @@ results <- compute_BLP(
   Y = rnorm(50),
   dimXc = 2,
   dimW = 0,
-  dimXnc = 1,
-  DP = FALSE
+  dimXnc = 1
 )
 }
 

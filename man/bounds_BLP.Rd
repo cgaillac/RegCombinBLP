@@ -19,7 +19,6 @@ bounds_BLP(
   full = FALSE,
   FW = FALSE,
   discrete = FALSE,
-  dK = 2.5,
   unchanged = FALSE,
   factor = FALSE,
   K_sel = 0,
@@ -55,8 +54,6 @@ bounds_BLP(
 \item{FW}{Logical: whether to apply Frisch-Waugh-type adjustment (default FALSE).}
 
 \item{discrete}{Logical: whether to treat conditioning variables as discrete (default FALSE).}
-
-\item{dK}{DEPRECATED, Numeric: discretization or smoothing parameter (default 2.5).}
 
 \item{unchanged}{Logical: whether to retain all values when discretizing (default FALSE).}
 

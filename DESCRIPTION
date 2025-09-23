@@ -13,7 +13,7 @@ RoxygenNote: 7.3.3
 Imports:
         dplyr,kableExtra,snowfall,RationalExp,RegCombin,Hmisc,geometry,pracma
 NeedsCompilation: no
-Packaged: 2025-09-22 14:43:00 UTC; gaillac
+Packaged: 2025-09-23 03:48:53 UTC; gaillac
 Author: Xavier D'Haultfoeuille [aut],
   Christophe Gaillac [aut, cre],
   Arnaud Maurel [aut]

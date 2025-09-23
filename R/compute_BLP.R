@@ -16,12 +16,9 @@
 #' @param dimW Integer: number of weight/factor covariates.
 #' @param dimXnc Integer: number of non-conditioning covariates.
 #' @param values Optional values used in bounds computation (default NULL).
-#' @param DP DEPRECATED, Logical: whether to use Pacini-style bounds (`TRUE`) or standard BLP (`FALSE`).
 #' @param full Logical: whether to use full computation in BLP bounds (default FALSE).
 #' @param FW Logical: whether to apply Frisch-Waugh adjustments (default FALSE).
 #' @param discrete Logical: whether to treat conditioning variables as discrete (default FALSE).
-#' @param bootstrap Logical: whether to perform bootstrap sampling (default FALSE).
-#' @param dK DEPRECATED, Numeric: smoothing/discretization parameter (default 2.5).
 #' @param unchanged Logical: whether to keep all values when discretizing (default TRUE).
 #' @param rule Numeric: sampling rule for bootstrap/subsampling (default 1).
 #' @param factor Logical: whether to treat W covariates as factors (default FALSE).
@@ -55,18 +52,18 @@
 #'   Y = rnorm(50),
 #'   dimXc = 2,
 #'   dimW = 0,
-#'   dimXnc = 1,
-#'   DP = FALSE
+#'   dimXnc = 1
 #' )
 #' }
 #'
 #' @export
 
-compute_BLP <- function(sample1 = NULL,Xc_x,Xnc,Xc_y,Wc_x,Wc_y,Y,w_x =NULL,w_y=NULL,dimXc,dimW,dimXnc,
-                        values=NULL,DP=FALSE,
+compute_BLP <- function(sample1 = NULL,Xc_x,Xnc,Xc_y,Wc_x,Wc_y,Y,w_x =NULL,w_y=NULL,dimXc,
+                        dimW,dimXnc,
+                        values=NULL,
                         full=FALSE,FW=FALSE,
                         discrete=FALSE,
-                        bootstrap=FALSE,dK=2.5 ,unchanged = TRUE, rule=1,
+                        unchanged = TRUE, rule=1,
                         factor=FALSE,K_sel=0,
                         dataset=0,
                         O_only = FALSE){
@@ -219,16 +216,11 @@ compute_BLP <- function(sample1 = NULL,Xc_x,Xnc,Xc_y,Wc_x,Wc_y,Y,w_x =NULL,w_y=N
   dataX =NULL
   dataP =NULL
 
-
-  # if(DP==TRUE){
-  #   out <- bounds_Pacini_Xc(Xncb,Yb,Xc_xb,Xc_yb,values,dimXc)
-  # }else{
     out <- bounds_BLP(Xncb,Yb,Xc_xb,Xc_yb,Wc_xb,Wc_yb,
                       w_x=weights_x,w_y=weights_y,
-                      dimXc, dimW,values,full,FW,discrete,dK, unchanged,factor,K_sel,
+                      dimXc, dimW,values,full,FW,discrete, unchanged,factor,K_sel,
                       dataset,  O_only )
 
-  # }
 
 
   return(out)
