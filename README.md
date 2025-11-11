@@ -73,7 +73,7 @@ library(RegCombinBLP)
 simulate_dgp <- function(
   n = 1200,
   sig_eps = 4, sig_eta = 1,
-  a1 = 1, a2 = 10, b1 = 1, b2 = 1, d1 = 1, d2 = 0,
+  a1 = 1, a2 = 10, b1 = 1, b2 = 1, d1 = 1, d2 = 0.25,
   DGP = c("DGP_without", "DGP_withXc", "DGP_with_all"),
   seed = 3101989
 ) {
@@ -233,4 +233,5 @@ If you use **RegCombinBLP** in academic work, please cite D'Haultfoeuille, Gaill
 ## MIT License
 
 ---
+
 
