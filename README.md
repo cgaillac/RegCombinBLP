@@ -1,11 +1,11 @@
 # RegCombinBLP
 
-We implement best linear predictions in a context where the outcome of interest and some of the covariates are observed in two different datasets that cannot be matched based on **D'Haultfoeuille, Gaillac, Maurel (2024) <doi:10.48550/arXiv.2412.04816v2>** (DGM hereafter). The package allows for common regressors observed in both datasets, including auxiliary variables, which researchers do not seek to include in the regression but that appear in both datasets. It also provides asymptotically normal estimators of the bounds.
+We implement best linear predictions in a context where the outcome of interest and some of the covariates are observed in two different datasets that cannot be matched based on **D'Haultfoeuille, Gaillac, Maurel (2024) <doi:10.48550/arXiv.2412.04816>** (DGM hereafter). The package allows for common regressors observed in both datasets, including auxiliary variables, which researchers do not seek to include in the regression but that appear in both datasets. It also provides asymptotically normal estimators of the bounds.
 
 This README shows how to:
 
 - Install the package from GitHub
-- Simulate a small example dataset, used in the simulation section of **D'Haultfoeuille, Gaillac, Maurel (2024) <doi:10.48550/arXiv.2412.04816v2>**.
+- Simulate a small example dataset, used in the simulation section of **D'Haultfoeuille, Gaillac, Maurel (2024) <doi:10.48550/arXiv.2412.04816>**.
 - Run `regCombin_BLP()` in three variants of the data-generating process (DGP):
   1) **`DGP_without`** — only the outside regressors (`Xnc`), not observed together with the outcome variable (`Y`).
   2) **`DGP_withXc`** — `Xnc` plus a commonly observed regressor `Xc`
@@ -233,6 +233,7 @@ If you use **RegCombinBLP** in academic work, please cite D'Haultfoeuille, Gaill
 ## MIT License
 
 ---
+
 
 
 
